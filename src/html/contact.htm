@@ -1,0 +1,28 @@
+{if="$submit == False"}
+
+  <b>{#CONTACT#} :</b><br />
+  {#ADDRESS#}: Ankara Yolu X. Km Ticaret Mrk. XXX. Sk. No:XX BURSA<br />
+  {#PHONE#} : +90(224) xxx xx xx (pbx)<br />
+  <br />
+
+  <form name='mailform' method='POST' action='contact'>
+	  {$token} <br />
+	  * {#NAME#} : <input name="_name" type="text"><br />
+	  {#PHONE#} : <input name="phone" type="text"><br />
+	  * {#EMAIL#} : <input name="_email" type="text"><br />
+	  {#MESSAGE#} :<textarea name="message" cols="20" rows="5"></textarea><br />
+	  <input type="submit" value="Submit"><br/>
+  </form>
+  {if="$error != ''"}
+  <b> {$error} </b> <br/>
+  {/if}
+
+
+{else}
+
+
+   <b> {#POSTED#} </b><br/>
+
+   
+{/if}
+

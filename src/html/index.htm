@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+    <head>
+	<title>{#TITLE#}</title>
+	<meta charset="{#CHARSET#}">
+	<meta http-equiv="Content-Language" content="{#CHARFLAG#}">
+	<meta name="generator" content="icerix-nano v1.0"/>
+	<meta name="author" content=""/>
+	<meta name="copyright" content=""/>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+    </head>
+    <body>
+    
+    {if="$icerix == 'main'"}
+      {$msg=WELCOME}
+    {else}    
+      {$msg=''}
+    {/if}    
+    
+    <table width="970" border="1" align="center">
+	    <tr height="110px">
+		<td width="200px">
+		    <img src="images/icerix-nano.png">
+		</td>
+		<td align="right">
+		    <div style="font-size: 80%;">
+		      <a href="?lang=en">English</a> / <a href="?lang=tr">Turkish</a>&nbsp;&nbsp;&nbsp;
+		    </div>
+		    <img src="images/white_728x90.gif">&nbsp;&nbsp;&nbsp;<br/>
+		</td>
+	    </tr>
+	</table>
+	<table width="970" border="1" align="center">
+	    <tr height="400">
+		<td width="200px">
+		    {function="block('menu')"}
+		</td>
+		<td style="padding:12px;">
+		    <h1>{$msg}</h1>
+		    {include="$icerix"}
+		</td>
+	    </tr>
+	</table>
+	<table width="970" border="1" align="center">
+	    <tr height="70">
+		<td width="200px" align="center">
+		    {#COPYRIGHT#}
+		</td>
+		<td align="center">
+		    {#LICENSE#}
+		</td>
+	    </tr>
+	</table>
+    </body>
+</html>
