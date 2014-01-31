@@ -11,13 +11,6 @@
 	<meta name="description" content="" />
     </head>
     <body>
-    
-    {if="$icerix == 'main'"}
-      {$msg=WELCOME}
-    {else}    
-      {$msg=''}
-    {/if}    
-    
     <table width="970" border="1" align="center">
 	    <tr height="110px">
 		<td width="200px">
@@ -37,7 +30,7 @@
 		    {function="block('menu')"}
 		</td>
 		<td style="padding:12px;">
-		    <h1>{$msg}</h1>
+		    <h1>{#WELCOME#}</h1>
 		    {include="$icerix"}
 		</td>
 	    </tr>

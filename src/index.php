@@ -562,17 +562,18 @@ $found = False;
 $uri = $_SERVER['REQUEST_URI'];
 $slf = dirname($_SERVER['PHP_SELF']);
 $pos = strpos($uri,$slf);
+
 if ($pos !== False) {
     $path = substr_replace($uri,"",$pos,strlen($slf));
 }
 $url = str_replace("/","",$path);
 
 foreach ($urls as $regc => $class) {
-    $regx = '{^' . $regc . '$}';
-    $regy = '{^' . $regc . '/$}';
+    $regx = '{^/' . $regc . '$}';
+    $regy = '{^/' . $regc . '/$}';
 
     if ($regc == "(.*)$") {
-	if (($url!="")  && (file_exists($html_dir.$url.".".$html_ext)) ) {
+	if (($url!="")  && (file_exists($html_dir.$url.".".$html_ext))) {
 	    $sHtml = new RainTPL;
 	    if ($url != 'index') {
 	        $sHtml->assign( "lang", $lang );
@@ -583,7 +584,7 @@ foreach ($urls as $regc => $class) {
 	    }
 	}	
     }
-    
+
     if ( (preg_match($regx, $path, $matches)) or (preg_match($regy, $path, $matches)) ) {
 	$found = True;
 	foreach ($matches as $key => $value) {
@@ -595,7 +596,6 @@ foreach ($urls as $regc => $class) {
 	break;
     }
 }
-
 
 if (!$found) {
     header(HTTP404ERR);

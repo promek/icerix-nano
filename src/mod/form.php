@@ -4,7 +4,6 @@ $to      = 'yourname@yourmail.xxx';
 $from    = 'admin@yourserver.xxx';
 $subject = 'the subject';
 
-
 function getIP () {
   if ($_SERVER['REMOTE_ADDR']<>'127.0.0.1') {
     return $_SERVER['REMOTE_ADDR'];
@@ -29,9 +28,7 @@ if (empty($_POST)) {
   if ((isset($_POST['token'])) and ($_POST['token']== $_SESSION["token"])) {
       if (count($aForm)-1>0){
 	  $cKey=array_keys($aForm);
-	  echo $cKey;
 	  for ($i=0;$i<=count($cKey)-1;$i++){
-	      echo $aForm[$cKey[$i]];
 	      if (substr($cKey[$i],0,1)=='_') {
 		  if ($aForm[$cKey[$i]]=='') {
 		      $submit=False;
@@ -70,7 +67,7 @@ if (empty($_POST)) {
 if (file_exists($html_dir.$url.".".$html_ext)) {
     $sHtml = new RainTPL;
 } else {
-    cxlog($html_dir.$url.".".$html_ext." not found...");
+    cxlog($html_dir.$url.$html_ext." ".FILENOTFOUND);
 }
 
 if ($url != 'index') {
