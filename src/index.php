@@ -569,8 +569,8 @@ if ($pos !== False) {
 $url = str_replace("/","",$path);
 
 foreach ($urls as $regc => $class) {
-    $regx = '{^/' . $regc . '$}';
-    $regy = '{^/' . $regc . '/$}';
+    $regx = '{^' . $regc . '$}';
+    $regy = '{^' . $regc . '/$}';
 
     if ($regc == "(.*)$") {
 	if (($url!="")  && (file_exists($html_dir.$url.".".$html_ext))) {
@@ -585,7 +585,7 @@ foreach ($urls as $regc => $class) {
 	}	
     }
 
-    if ( (preg_match($regx, $path, $matches)) or (preg_match($regy, $path, $matches)) ) {
+    if ( (preg_match($regx, $url, $matches)) or (preg_match($regy, $url, $matches)) ) {
 	$found = True;
 	foreach ($matches as $key => $value) {
 	    if (is_string($key)) {
