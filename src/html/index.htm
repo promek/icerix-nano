@@ -30,7 +30,10 @@
 		    {function="block('menu')"}
 		</td>
 		<td style="padding:12px;">
-		    <h1>{#WELCOME#}</h1>
+		    {if="$icerix == 'main'"}
+			<h1>{#WELCOME#}</h1>
+		    {/if}		
+
 		    {include="$icerix"}
 		</td>
 	    </tr>
