@@ -16,6 +16,6 @@ icerix-nano Simple html/php framework
 
 - Contains example form-mail (mod/form.php) application
 
-site : http://nano.icerix.org/
+site : http://icerix-nano.panel.web.tr/
 
-demo : http://nano.icerix.org/demo/ 
+demo : http://icerix-nano.panel.web.tr/demo/ 
